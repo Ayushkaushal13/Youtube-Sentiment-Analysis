@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .average-sentiment {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5em;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .positive {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .negative {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .neutral {
+            background-color: #ffeeba;
+            color: #856404;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 3px;
+        }
+        li.positive {
+            border-color: #28a745;
+        }
+        li.negative {
+            border-color: #dc3545;
+        }
+        li.neutral {
+            border-color: #ffc107;
+        }
+        .comment {
+            font-weight: bold;
+        }
+        .sentiment {
+            font-style: italic;
+        }
+        .analyze-again {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .analyze-again:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis of YouTube Comments</h1>
+        
+        <div class="average-sentiment {{ average_sentiment }}">
+            Overall Sentiment: {{ average_sentiment|title }}
+        </div>
+        
+        <ul>
+            {% for item in sentiments %}
+                <li class="{{ item.sentiment }}">
+                    <p class="comment">{{ item.comment }}</p>
+                    <p class="sentiment">Sentiment: {{ item.sentiment|title }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'analyze_comments' %}" class="analyze-again">Analyze Another Video</a>
+    </div>
+</body>
+</html>
