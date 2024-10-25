@@ -1,4 +1,4 @@
-''' Youtube Comments Sentiment Analysis '''
-![20241025_232758](https://github.com/user-attachments/assets/c09e102f-950e-4e42-b220-07f41ec4c4b4)
-![20241025_232758](https://github.com/user-attachments/assets/def75592-a2f3-4695-a216-114ff2b61075)
-![20241025_232819](https://github.com/user-attachments/assets/81bb44d2-b57c-4d51-9de1-5463cd24dd7b)
+'''Youtube Comment Sentiment Analysis'''
+![20241025_232918](https://github.com/user-attachments/assets/a942993c-c49c-42fa-ae19-e39680f59980)
+![20241025_232758](https://github.com/user-attachments/assets/fbb943eb-67e2-4954-a0ae-4e43b133bfc6)
+
